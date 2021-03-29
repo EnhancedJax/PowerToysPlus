@@ -1,0 +1,9 @@
+[Variables]
+Color=1,1,1
+Border=20,20,20
+FontColor=255,255,255
+DarkColor=200,200,200
+BoxBorder=30,30,30
+BoxColor=20,20,20
+SettingColor=0,0,0
+SettingAltColor=20,20,20

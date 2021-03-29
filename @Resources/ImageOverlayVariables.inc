@@ -1,0 +1,12 @@
+[Variables]
+OnOff=0
+Edge=1
+Image=C:\Users\Jax4Real\Documents\Rainmeter\Skins\PowerToys+\@Resources\Images\DropHere.png
+OldImage1=C:\Users\Jax4Real\Documents\Rainmeter\Skins\PowerToys+\@Resources\Images\HistoryHere.png
+OldImage2=C:\Users\Jax4Real\Documents\Rainmeter\Skins\PowerToys+\@Resources\Images\HistoryHere.png
+OldImage3=C:\Users\Jax4Real\Documents\Rainmeter\Skins\PowerToys+\@Resources\Images\HistoryHere.png
+ImageClick=0
+Top=1
+ImageAlphaPer=100
+Draggable=0
+Position=Centered
