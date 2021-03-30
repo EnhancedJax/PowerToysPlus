@@ -29,7 +29,7 @@ leftmouseupaction=[!CommandMeasure "MeasureLIne1" "Set"][!Hide]["#@#Actions\AHKO
 
 [Run1]
 Meter=Image
-Imagename=#@#icons\powershell.png
+Imagename=#@#Icons\#IconPack#\powershell.png
 x=(#GlobalW#-20*2-15-7)
 y=5r
 w=15
@@ -45,7 +45,7 @@ UpdateDivider=-1
 
 [Search1]
 Meter=Image
-Imagename=#@#icons\search.png
+Imagename=#@#Icons\#IconPack#\search.png
 w=15
 x=r
 Y=15R

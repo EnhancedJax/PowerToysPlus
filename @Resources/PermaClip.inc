@@ -28,7 +28,7 @@ LeftMouseUpAction=[!SetClip """#1#"""][!Setoption #CURRENTSECTION# fontweight 40
 
 [Run1]
 Meter=Image
-Imagename=#@#icons\powershell.png
+Imagename=#@#Icons\#IconPack#\powershell.png
 x=(#GlobalW#-20*2-15-7)
 y=5r
 w=15
@@ -43,7 +43,7 @@ Container=BoxContainer
 
 [Search1]
 Meter=Image
-Imagename=#@#icons\search.png
+Imagename=#@#Icons\#IconPack#\search.png
 w=15
 x=r
 Y=15R

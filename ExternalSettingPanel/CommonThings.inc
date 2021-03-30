@@ -50,7 +50,7 @@ this=-150,(-#PanelH#/2),0,0,500,500 | #SettingAltColor# ; 0.7 | #SettingAltColor
 
 [Cross]
 Meter=Image
-ImageName=#@#Icons\Cross.png
+ImageName=#@#Icons\#IconPack#\Cross.png
 X=20
 Y=20
 W=20
@@ -71,7 +71,7 @@ ImageTint=#FontColor#
 
 ;[Cross]
 ;Meter=Image
-;ImageName=#@#Icons\Cross.png
+;ImageName=#@#Icons\#IconPack#\Cross.png
 ;X=(#PanelW#-18-10)
 ;Y=5
 ;W=18
@@ -92,7 +92,7 @@ ImageTint=#FontColor#
 
 ;[Home]
 ;Meter=Image
-;ImageName=#@#Icons\Home.png
+;ImageName=#@#Icons\#IconPack#\Home.png
 ;X=20r
 ;Y=15r
 ;W=20
@@ -118,7 +118,7 @@ LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Global.ini
 
 [Global]
 Meter=Image
-ImageName=#@#Icons\Options.png
+ImageName=#@#Icons\#IconPack#\Settings.png
 X=20r
 Y=15r
 W=20
@@ -137,6 +137,24 @@ X=([Global:X]+50)
 Y=([Global:Y]+10)
 MeterStyle=RegularText | TextStyle
 
+[RunBox]
+Meter=Shape
+Y=15R
+MeterStyle=GlobalBox
+This=Fill Color #Accent#,0
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "MultiRun.ini"]
+
+[Run]
+Meter=Image
+ImageName=#@#Icons\#IconPack#\Run.png
+MeterStyle=Global
+
+[RunText]
+Meter=String
+Text=MultiRun
+FontWeight=
+MeterStyle=RegularText | TextStyle
+
 [ClipboardBox]
 Meter=Shape
 Y=15R
@@ -146,7 +164,7 @@ LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "PermaClip.
 
 [Clipboard]
 Meter=Image
-ImageName=#@#Icons\PermaClip.png
+ImageName=#@#Icons\#IconPack#\PermaClip.png
 MeterStyle=Global
 
 [ClipboardText]
@@ -164,32 +182,12 @@ LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Dashboard.
 
 [Dashboard]
 Meter=Image
-ImageName=#@#Icons\dashboard.png
+ImageName=#@#Icons\#IconPack#\dashboard.png
 MeterStyle=Global
 
 [DashboardText]
 Meter=String
 Text=Dashboard
-FontWeight=
-MeterStyle=RegularText | TextStyle
-
-[DesktopSwitchBox]
-Meter=Shape
-Y=15R
-MeterStyle=GlobalBox
-This=Fill Color #Accent#,0
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "DesktopSwitch.ini"]
-
-[DesktopSwitch]
-Meter=Image
-ImageName=#@#Icons\DesktopSwitch.png
-MeterStyle=Global
-ImageAlpha=100
-
-[DesktopSwitchText]
-Meter=String
-Text=Deswitch
-;FOntColor=255,255,255,100
 FontWeight=
 MeterStyle=RegularText | TextStyle
 
@@ -202,7 +200,7 @@ LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "SnipContro
 
 [SnipControl]
 Meter=Image
-ImageName=#@#Icons\Snip.png
+ImageName=#@#Icons\#IconPack#\Snip.png
 MeterStyle=Global
 
 [SnipControlText]
@@ -220,31 +218,13 @@ LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "ImageOverl
 
 [ImageOverlay]
 Meter=Image
-ImageName=#@#Icons\ImageOverlay.png
+ImageName=#@#Icons\#IconPack#\ImageOverlay.png
 MeterStyle=Global
 
 [ImageOverlayText]
 Meter=String
 Text=ImageOverlay
 FontWeight=
-MeterStyle=RegularText | TextStyle
-
-;[TaskbarBox]
-;Meter=Shape
-;Y=15R
-;MeterStyle=GlobalBox
-;;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Taskbar.ini"]
-
-;[Taskbar]
-;Meter=Image
-;ImageName=#@#Icons\Taskbar.png
-;MeterStyle=Global
-;ImageAlpha=100
-
-;[TaskbarText]
-;Meter=String
-;Text=Taskbar
-;FontWeight=
 MeterStyle=RegularText | TextStyle
 
 [StartBox]
@@ -256,7 +236,7 @@ This=Fill Color #Accent#,0
 
 [Start]
 Meter=Image
-ImageName=#@#Icons\Start.png
+ImageName=#@#Icons\#IconPack#\Start.png
 MeterStyle=Global
 ImageAlpha=100
 
@@ -265,23 +245,25 @@ Meter=String
 Text=StartCenter
 FontWeight=
 MeterStyle=RegularText | TextStyle
-;FOntColor=255,255,255,100
+FOntColor=255,255,255,100
 
-[RunBox]
+[DesktopSwitchBox]
 Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "MultiRun.ini"]
+;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "DesktopSwitch.ini"]
 
-[Run]
+[DesktopSwitch]
 Meter=Image
-ImageName=#@#Icons\Run.png
+ImageName=#@#Icons\#IconPack#\DesktopSwitch.png
 MeterStyle=Global
+ImageAlpha=100
 
-[RunText]
+[DesktopSwitchText]
 Meter=String
-Text=MultiRun
+Text=Deswitch
+FOntColor=255,255,255,100
 FontWeight=
 MeterStyle=RegularText | TextStyle
 
@@ -293,14 +275,14 @@ MeterStyle=RegularText | TextStyle
 
 ;[()]
 ;Meter=Image
-;ImageName=#@#Icons\().png
+;ImageName=#@#Icons\#IconPack#\().png
 ;MeterStyle=Global
 
 ;[()Text]
 ;Meter=String
 ;Text=()
 ;FontWeight=
-MeterStyle=RegularText | TextStyle
+;MeterStyle=RegularText | TextStyle
 
 [BarHandler]
 Meter=Shape
@@ -310,7 +292,7 @@ Y=(#BarHandler#+12)
 
 ;[Cross]
 ;Meter=Image
-;ImageName=#@#Icons\Cross.png
+;ImageName=#@#Icons\#IconPack#\Cross.png
 ;X=20
 ;Y=(#PanelH#-35)
 ;W=20

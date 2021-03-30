@@ -191,8 +191,8 @@ SysInfoType=INTERNET_CONNECTIVITY
 Substitute="-1.0":"Offline","1.0":"Connected"
 DynamicVariables=1
 IfCondition=InternetStatus = -1
-IfTrueAction=[!SetOption Mbox6T Text "%1#CRLF#Click here to connect to the internet"][!SetOption Mbox6I ImageName "#@#Icons\#NetType#-0.png"][!UpdateMeter Mbox6T][!UpdateMeter Mbox6I][!Redraw]
-IfFalseAction=[!SetOption Mbox6T Text "%1 %2-%3 #CRLF#Dl %4b | Ul %5b"][!SetOption Mbox6I ImageName "#@#Icons\#NetType#-1.png"][!UpdateMeter Mbox6T][!UpdateMeter Mbox6I][!Redraw]
+IfTrueAction=[!SetOption Mbox6T Text "%1#CRLF#Click here to connect to the internet"][!SetOption Mbox6I ImageName "#@#Icons\#IconPack#\#NetType#-0.png"][!UpdateMeter Mbox6T][!UpdateMeter Mbox6I][!Redraw]
+IfFalseAction=[!SetOption Mbox6T Text "%1 %2-%3 #CRLF#Dl %4b | Ul %5b"][!SetOption Mbox6I ImageName "#@#Icons\#IconPack#\#NetType#-1.png"][!UpdateMeter Mbox6T][!UpdateMeter Mbox6I][!Redraw]
 [mAUTH]
 Measure=PLUGIN
 Plugin=WifiStatus
@@ -330,5 +330,5 @@ Substitute="^-1$":"0"
 Measure=Calc
 Formula=MeasureWin7Audio
 IfCondition=(MeasureAudioIcon > 0)
-IfTrueAction=[!SetOption Mbox15I ImageName #@#Icons\Sound.png][!UpdateMEter Mbox15I][!Redraw]
-IfFalseAction=[!SetOption Mbox15I ImageName "#@#Icons\No Sound.png"][!UpdateMEter Mbox15I][!Redraw]
+IfTrueAction=[!SetOption Mbox15I ImageName #@#Icons\#IconPack#\Sound.png][!UpdateMEter Mbox15I][!Redraw]
+IfFalseAction=[!SetOption Mbox15I ImageName "#@#Icons\#IconPack#\No Sound.png"][!UpdateMEter Mbox15I][!Redraw]

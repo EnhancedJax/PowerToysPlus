@@ -334,7 +334,7 @@ X=0
 Y=10R
 W=70
 SolidColor=0,0,0,1
-Imagename=#@#Icons\Internet.png
+Imagename=#@#Icons\#IconPack#\Internet.png
 UpdateDivider=-1
 Container=GlobalContainer
 
@@ -787,7 +787,7 @@ UpdateDivider=-1
 
 [Icon]
 Meter=Image
-ImageName=#@#Icons\Settings_large.png
+ImageName=#@#Icons\#IconPack#\Settings_large.png
 X=((#GlobalW#-#XMargin#)/2-40/2)
 Y=150R
 W=40

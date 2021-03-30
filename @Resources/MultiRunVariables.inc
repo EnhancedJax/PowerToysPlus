@@ -7,9 +7,12 @@ GlobalH=100
 Alpha=150
 engine=https://www.google.com/search?q=
 enginename=Google
-browserlink=["#engine#$UserInput$"]
+browserlink=["#engine#[Filter2]"]
 browser=Default
 Icon=1
+Animated=1
+Animation=-100
+AnimatedA=0
 
 OnOff=1
 @includeGlobal=#@#GlobalVars.inc
