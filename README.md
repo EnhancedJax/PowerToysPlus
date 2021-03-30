@@ -2,7 +2,7 @@
   PowerToys+
 </h1>
 
-<img src="./doc/images/overview/PT%20hero%20image.png"/>
+<img src="./@Resources/images/SplashAll.gif"/>
 
 <h4 align="center">Download Now!</h4>
 
@@ -71,4 +71,4 @@ Rainmeter 4.4 beta or newer: [Download here](https://www.rainmeter.net/)
 1. Use the settings panel to enable / disable modules, press the `Add as program` button to make the settings panel searchable in the start menu or PowerToys Run
   
 ## Contact me
-via Discord:** Jax#1090**
+via Discord: **Jax#1090**
