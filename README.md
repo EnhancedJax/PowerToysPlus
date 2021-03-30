@@ -2,7 +2,7 @@
   PowerToys+
 </h1>
 
-<img src="https://github.com/EnhancedJax/PowerToysPlus/blob/master/%40Resources/Images/GIF.gif"/>
+<img src="https://github.com/EnhancedJax/PowerToysPlus/blob/master/%40Resources/Images/LogoSplash/Amoled.png"/>
 
 <h4 align="center">Download Now!</h4>
 
