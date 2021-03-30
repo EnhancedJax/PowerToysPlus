@@ -2,7 +2,7 @@
   PowerToys+
 </h1>
 
-<img src="./@Resources/images/SplashAll.gif"/>
+<img src="https://github.com/EnhancedJax/PowerToysPlus/blob/master/%40Resources/Images/GIF.gif"/>
 
 <h4 align="center">Download Now!</h4>
 
