@@ -1,5 +1,5 @@
 <h1 align="center">
-  PowerToys+
+  PowerToys+ (Unreleased)
 </h1>
 
 <img src="https://github.com/EnhancedJax/PowerToysPlus/blob/master/%40Resources/Images/LogoSplash/Amoled.png"/>
