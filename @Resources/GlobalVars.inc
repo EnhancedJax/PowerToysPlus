@@ -1,7 +1,7 @@
 [Variables]
 CScheme=Dark
 @includeCScheme=#@#Cschemes\#CScheme#.inc
-Accent=68,68,68
+Accent=166,180,180
 Font=Seoge UI
 Scale=(#SCREENAREAHEIGHT#/1080)
 Corner=1

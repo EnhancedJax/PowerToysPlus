@@ -232,20 +232,18 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Start.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "StartCenter.ini"]
 
 [Start]
 Meter=Image
 ImageName=#@#Icons\#IconPack#\Start.png
 MeterStyle=Global
-ImageAlpha=100
 
 [StartText]
 Meter=String
 Text=StartCenter
 FontWeight=
 MeterStyle=RegularText | TextStyle
-FOntColor=255,255,255,100
 
 [DesktopSwitchBox]
 Meter=Shape

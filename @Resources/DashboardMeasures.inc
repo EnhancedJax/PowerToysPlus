@@ -80,6 +80,16 @@ UpdateDivider=12000
 RegExpSubstitute=1
 Substitute="CPU":"","\(TM\)|\(tm\)|\(Tm\)":"","Processor":"","(\w{1,4}[\s\S]Core[s]?)":"","(Intel Core|Intel\(R\) Core)":"Intel(R) Core#CRLF#","@.*":"","AMD Ryzen ":"AMD Ryzen#CRLF# R"
 UpdateDivider=-1
+[MeasureMotherboardname]
+Measure=Plugin
+Plugin=RunCommand
+Parameter=wmic baseboard get product
+State=Hide
+OutputType=ANSI
+OutputFile=#CURRENTPATH#MBName.txt
+RegExpSubstitute=1
+Substitute="Product.*#CRLF#":"","#CRLF#.*":"","  ":"","\(":"#CRLF#("
+UpdateDivider=-1
 
 ;[MeasureProcessor]
 ;Measure=Registry

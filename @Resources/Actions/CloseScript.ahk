@@ -31,6 +31,12 @@ else if (OutputVar = "SnipControl") {
 else if (OutputVar = "MultiRun") {
 	CloseScript("MultiRun.ahk")
 }
+else if (OutputVar = "Taskbar") {
+	CloseScript("Hidetaskbar.ahk")
+}
+else if (OutputVar = "StartCenter") {
+	CloseScript("StartCenter.ahk")
+}
 	
 	Return
 ExitApp

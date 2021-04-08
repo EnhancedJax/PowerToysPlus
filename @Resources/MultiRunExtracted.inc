@@ -1,0 +1,15 @@
+[Variables]
+A1=s
+A2=mge
+A3=l
+A4=r
+A5=v
+A6=config
+A7=w
+A8=m
+A9=h
+A10=tb
+A11=rsu
+A12=d
+A13=s|
+A14=s||tb|h|m|w|config|v|r|l|mge|s|rsu|d
