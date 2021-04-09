@@ -1,9 +1,9 @@
 [Variables]
 CScheme=Dark
 @includeCScheme=#@#Cschemes\#CScheme#.inc
-Accent=166,180,180
+Accent=35, 159, 255
 Font=Seoge UI
-Scale=(#SCREENAREAHEIGHT#/1080)
+Scale=1
 Corner=1
 Edge=0
 Acrylic=Acrylic

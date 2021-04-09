@@ -1,6 +1,6 @@
 #SingleInstance force
 #NoTrayIcon
-
+Process, Priority,, High
 Unload := 0
 
 $LWin::

@@ -19,20 +19,20 @@ OnOff=1
 @includeGlobal=#@#GlobalVars.inc
 
 H1=-k
-H2=-search
-H3=-search
-H4=
-H5=
-H6=-e
-H7==s
-H8=l
-H9=l
-H10=C:\Users\Jax4Real\AppData\Roaming
-H11=-
-H12=-e
-H13=-d
-H14=powershell -s
-H15=powershell
+H2=k
+H3=-k
+H4=-search
+H5=-search
+H6=
+H7=
+H8=-e
+H9==s
+H10=l
+H11=l
+H12=C:\Users\Jax4Real\AppData\Roaming
+H13=-
+H14=-e
+H15=-d
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
 ;;╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝
