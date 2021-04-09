@@ -72,3 +72,6 @@ Rainmeter 4.4 beta or newer: [Download here](https://www.rainmeter.net/)
   
 ## Contact me
 via Discord: **Jax#1090**
+
+##ExamplePull
+This is how pull requests are made.
