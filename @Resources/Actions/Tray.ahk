@@ -1,4 +1,4 @@
-#SingleInstance force
+#SingleInstance Ignore
 #NoTrayIcon
 ProcessSetPriority("Realtime")
 DetectHiddenWindows 1

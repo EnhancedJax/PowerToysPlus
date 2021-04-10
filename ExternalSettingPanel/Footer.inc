@@ -1,24 +1,15 @@
-[Variables]
-@includeGlobal=#@#GlobalVars.inc
-@includeCV=CommVars.inc
-
-
-[FrostedGlass]
-Measure=Plugin
-Plugin=FrostedGlass
-Type=#Blur#
-
-[Background]
+[SlideBackground]
 Meter=Shape
 DynamicVariables=1
-Shape=Rectangle 0,0,(#AniSlide#+#Corner#*2*10),(#PanelH#),(#Corner#*#Edge#*10),(#Corner#*#Edge#*10) | StrokeWidth 0 | Fill Color #SettingAltColor#,#Alpha#
-;31,31,31 | 247, 241, 242
-Shape2=Rectangle (#AniSlide#),0,(#PanelW#-#AniSlide#),#PanelH#,(#Corner#*#Edge#*10),(#Corner#*#Edge#*10) | StrokeWidth 0 | Fill Color #SettingColor#
-;0,0,0 | 255,255,255
+Group=Slides
+Shape=Rectangle 0,0,(#AniSlide#),(#PanelH#),(#Corner#*#Edge#*10),(#Corner#*#Edge#*10) | StrokeWidth 0 | Fill Color #SettingAltColor#
+MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
+MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
 
 [SlideContainer]
 Meter=Shape
 DynamicVariables=1
+Group=Slides
 Shape=Rectangle 0,0,(#AniSlide#),(#PanelH#) | StrokeWidth 0 | Fill color 255,255,255
 
 [ActionTimer]
@@ -27,8 +18,8 @@ Plugin=ActionTimer
 DynamicVariables=1
 ActionList1=Repeat SlideIn,8.165,10
 ActionList2=Repeat SlideOut,8.165,10
-SlideIn=[!SetVariable AniSlide "(Clamp((#AniSlide#+25),60,250))"][!UpdateMeter *][!UpdateMeasure ActionTimer][!Redraw]
-SlideOut=[!SetVariable AniSlide "(Clamp((#AniSlide#-25),60,250))"][!UpdateMeter *][!UpdateMeasure ActionTimer][!Redraw]
+SlideIn=[!SetVariable AniSlide "(Clamp((#AniSlide#+25),60,220))"][!UpdateMeterGroup Slides][!UpdateMeasure ActionTimer][!Redraw]
+SlideOut=[!SetVariable AniSlide "(Clamp((#AniSlide#-25),60,220))"][!UpdateMeterGroup Slides][!UpdateMeasure ActionTimer][!Redraw]
 
 [OnLoad]
 Measure=String
@@ -42,12 +33,6 @@ OnUpdateAction=[!SetOption #CURRENTSETTING# FOntWeight 630][!Zpos 1][!FadeDurati
 ;FontSize=9
 ;StringAlign=LEft
 
-[SlideWhiteHighlight]
-Meter=Shape
-X=(#PanelW#-300)
-Shape=Rectangle 0,0,300,#PanelH#,(#Corner#*#Edge#*10),(#Corner#*#Edge#*10) | StrokeWidth 0 | Fill RadialGradient this
-this=-150,(-#PanelH#/2),0,0,500,500 | #SettingAltColor# ; 0.7 | #SettingAltColor#,100 ; 1.0
-
 [Cross]
 Meter=Image
 ImageName=#@#Icons\#IconPack#\Cross.png
@@ -58,53 +43,6 @@ LeftMouseUpAction=[!DeactivateConfig]
 SolidColor=0,0,0,1
 ImageTint=#FontColor#
 
-;[Crossbackground]
-;Meter=Image
-;X=(#PanelW#-18-10-10)
-;W=40
-;H=(18+10)
-;SolidColor=0,0,0,1
-;MouseOverAction=[!SetOption #CURRENTSECTION# SolidColor "232, 17, 35"][!SetOption Cross ImageAlpha 255][!UpdateMeter *][!Redraw]
-;MouseLeaveAction=[!SetOption #CURRENTSECTION# SolidColor "0,0,0,1"][!SetOption Cross ImageAlpha 150][!UpdateMeter *][!Redraw]
-;LeftMouseUpAction=[!DeactivateConfig]
-
-
-;[Cross]
-;Meter=Image
-;ImageName=#@#Icons\#IconPack#\Cross.png
-;X=(#PanelW#-18-10)
-;Y=5
-;W=18
-;SolidColor=0,0,0,1
-;ImageAlpha=150
-
-
-
-;[HomeBox]
-;Meter=Shape
-;X=0
-;Y=100
-;Shape=Rectangle 0,0,250,50,(#Corner#/4*10),(#Corner#/4*10) | StrokeWidth 0 | Extend This | Extend That
-;This=Fill Color #Accent#,0
-;MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-;MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Main.ini"]
-
-;[Home]
-;Meter=Image
-;ImageName=#@#Icons\#IconPack#\Home.png
-;X=20r
-;Y=15r
-;W=20
-
-;[HomeText]
-;Meter=String
-;X=30R
-;Y=10r
-;FontSize=10
-;Text=Home
-;MeterStyle=RegularText
-
 [GlobalBox]
 Meter=Shape
 X=0
@@ -112,6 +50,7 @@ Y=120
 Shape=Rectangle 0,0,#AniSlide#,50,(#Corner#/4*10),(#Corner#/4*10) | StrokeWidth 0 | Extend This | Extend That
 This=Fill Color #Accent#,0
 DynamicVariables=1
+Group=Slides
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Global.ini"]
@@ -128,6 +67,7 @@ ImageTint=#FontColor#
 X=r
 Y=50r
 FontSize=10
+StringAlign=LeftCenter
 Container=SlideContainer
 
 [GlobalText]
@@ -281,6 +221,32 @@ MeterStyle=RegularText | TextStyle
 ;Text=()
 ;FontWeight=
 ;MeterStyle=RegularText | TextStyle
+[CyclerBox]
+Meter=Shape
+Y=(#PanelH#-60)
+MeterStyle=GlobalBox | Cycler1
+This=Fill Color #Accent#,0
+[Cycler1]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW (#SCREENAREAWIDTH#/2) "CommVars.inc"][!WriteKeyValue Variables PanelH (#SCREENAREAHEIGHT#) "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler2" "Footer.inc"][!Refresh]
+[Cycler2]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW 920 "CommVars.inc"][!WriteKeyValue Variables PanelH 620 "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler3" "Footer.inc"][!Refresh]
+[Cycler3]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW 1150 "CommVars.inc"][!WriteKeyValue Variables PanelH 775 "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler1" "Footer.inc"][!Refresh]
+
+[Cycler]
+Meter=Image
+ImageName=#@#Icons\#IconPack#\Window.png
+X=20
+Y=(#PanelH#-45)
+W=20
+MeterStyle=Global
+
+[CyclerText]
+Meter=String
+Text=Cycle window type
+Y=(#PanelH#-35)
+FontWeight=
+MeterStyle=RegularText | TextStyle
 
 [BarHandler]
 Meter=Shape
@@ -297,11 +263,11 @@ Y=(#BarHandler#+12)
 ;LeftMouseUpAction=[!DeactivateConfig]
 ;SolidColor=0,0,0,1
 
-[SlideArea]
-Meter=Image
-W=#AniSlide#
-H=#PanelH#
-SolidColor=0,0,0,1
-DynamicVariables=1
-MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
-MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
+;[SlideArea]
+;Meter=Image
+;W=#AniSlide#
+;H=#PanelH#
+;SolidColor=0,0,0,1
+;DynamicVariables=1
+;MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
+;MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]

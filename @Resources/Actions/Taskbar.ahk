@@ -1,5 +1,5 @@
 #Persistent
-#SingleInstance force
+#SingleInstance Ignore
 #NoTrayIcon
 ListLines(0)
 DetectHiddenWindows(1)

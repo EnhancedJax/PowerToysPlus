@@ -18,21 +18,21 @@ AnimatedA=0
 OnOff=1
 @includeGlobal=#@#GlobalVars.inc
 
-H1=-k
-H2=k
-H3=-k
-H4=-search
-H5=-search
-H6=
-H7=
-H8=-e
-H9==s
-H10=l
-H11=l
-H12=C:\Users\Jax4Real\AppData\Roaming
-H13=-
-H14=-e
-H15=-d
+H1=-,
+H2=-L
+H3=-L
+H4=shutdown -s
+H5=-confiog
+H6=-config
+H7=explorer.exe
+H8=ss
+H9=powershell
+H10=This
+H11=rl
+H12=config
+H13=C:\Users\Jax4Real\AppData\Roaming
+H14=ms-clock:
+H15=ms-settings:bluetooth
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
 ;;╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝

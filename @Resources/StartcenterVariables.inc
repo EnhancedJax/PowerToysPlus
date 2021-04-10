@@ -1,14 +1,20 @@
 [Variables]
 @includeGlobal=#@#GlobalVars.inc
-GlobalW=(640*#Scale#)
+GlobalW=(593*#Scale#)
 GlobalH=(864*#Scale#)
-BoxW=(110*#scale#)
+BoxW=(100*#scale#)
+MonW=(120*#scale#)
+SliderM=(70*#Scale#)
+SliderX=#SliderM#
+SliderW=(280*#Scale#)
+SliderH=(3*#Scale#)
 
 Location=Center
 ShowSec=1
 OnOff=1
 Animated=1
 
+Monitor=3
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
