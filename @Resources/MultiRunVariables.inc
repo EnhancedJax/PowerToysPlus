@@ -19,20 +19,20 @@ OnOff=1
 @includeGlobal=#@#GlobalVars.inc
 
 H1=-,
-H2=-L
-H3=-L
-H4=shutdown -s
-H5=-confiog
-H6=-config
-H7=explorer.exe
-H8=ss
-H9=powershell
-H10=This
-H11=rl
-H12=config
-H13=C:\Users\Jax4Real\AppData\Roaming
-H14=ms-clock:
-H15=ms-settings:bluetooth
+H2=-m,
+H3=shell:AppsFolder
+H4=-,
+H5=-L
+H6=-L
+H7=shutdown -s
+H8=-confiog
+H9=-config
+H10=explorer.exe
+H11=ss
+H12=powershell
+H13=This
+H14=rl
+H15=config
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
 ;;╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝

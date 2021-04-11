@@ -37,6 +37,9 @@ else if (OutputVar = "Taskbar") {
 else if (OutputVar = "StartCenter") {
 	CloseScript("StartCenter.ahk")
 }
+else if (OutputVar = "Tray") {
+	CloseScript("StartTray.ahk")
+}
 	
 	Return
 ExitApp

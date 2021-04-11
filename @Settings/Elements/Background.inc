@@ -1,6 +1,6 @@
 [Variables]
 @includeGlobal=#@#GlobalVars.inc
-@includeCV=CommVars.inc
+@includeCV=Variables.inc
 
 [Background]
 Meter=Shape

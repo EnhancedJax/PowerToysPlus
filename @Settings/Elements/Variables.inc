@@ -1,5 +1,5 @@
 [Variables]
-PanelW=1150
-PanelH=775
+PanelW=920
+PanelH=620
 AniSlide=60
 AniSlideStatic=60

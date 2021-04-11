@@ -42,6 +42,15 @@ W=20
 LeftMouseUpAction=[!DeactivateConfig]
 SolidColor=0,0,0,1
 ImageTint=#FontColor#
+Container=SlideContainer
+
+[crosstext]
+Meter=String
+Text=Powertoys+ Config
+X=25R
+y=10r
+FontWeight=600
+MeterStyle=RegularText | TextStyle
 
 [GlobalBox]
 Meter=Shape
@@ -53,7 +62,7 @@ DynamicVariables=1
 Group=Slides
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Global.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "Global.ini"]
 
 [Global]
 Meter=Image
@@ -82,7 +91,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "MultiRun.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "MultiRun.ini"]
 
 [Run]
 Meter=Image
@@ -100,7 +109,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "PermaClip.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "PermaClip.ini"]
 
 [Clipboard]
 Meter=Image
@@ -118,7 +127,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "Dashboard.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "Dashboard.ini"]
 
 [Dashboard]
 Meter=Image
@@ -136,7 +145,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "SnipControl.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "SnipControl.ini"]
 
 [SnipControl]
 Meter=Image
@@ -154,7 +163,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "ImageOverlay.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "ImageOverlay.ini"]
 
 [ImageOverlay]
 Meter=Image
@@ -172,7 +181,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "StartCenter.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "StartCenter.ini"]
 
 [Start]
 Meter=Image
@@ -190,7 +199,7 @@ Meter=Shape
 Y=15R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "DesktopSwitch.ini"]
+;LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "DesktopSwitch.ini"]
 
 [DesktopSwitch]
 Meter=Image
@@ -209,7 +218,7 @@ MeterStyle=RegularText | TextStyle
 ;Meter=Shape
 ;Y=15R
 ;MeterStyle=GlobalBox
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\ExternalSettingPanel" "().ini"]
+;LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "().ini"]
 
 ;[()]
 ;Meter=Image
@@ -224,14 +233,14 @@ MeterStyle=RegularText | TextStyle
 [CyclerBox]
 Meter=Shape
 Y=(#PanelH#-60)
-MeterStyle=GlobalBox | Cycler1
+MeterStyle=GlobalBox | Cycler3
 This=Fill Color #Accent#,0
 [Cycler1]
-LeftMouseUpAction=[!WriteKeyValue Variables PanelW (#SCREENAREAWIDTH#/2) "CommVars.inc"][!WriteKeyValue Variables PanelH (#SCREENAREAHEIGHT#) "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler2" "Footer.inc"][!Refresh]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW (#SCREENAREAWIDTH#/2) "elements\variables.inc"][!WriteKeyValue Variables PanelH (#SCREENAREAHEIGHT#) "elements\variables.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler2" "elements\footer.inc"][!Refresh]
 [Cycler2]
-LeftMouseUpAction=[!WriteKeyValue Variables PanelW 920 "CommVars.inc"][!WriteKeyValue Variables PanelH 620 "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler3" "Footer.inc"][!Refresh]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW 920 "elements\variables.inc"][!WriteKeyValue Variables PanelH 620 "elements\variables.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler3" "elements\footer.inc"][!Refresh]
 [Cycler3]
-LeftMouseUpAction=[!WriteKeyValue Variables PanelW 1150 "CommVars.inc"][!WriteKeyValue Variables PanelH 775 "CommVars.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler1" "Footer.inc"][!Refresh]
+LeftMouseUpAction=[!WriteKeyValue Variables PanelW 1150 "elements\variables.inc"][!WriteKeyValue Variables PanelH 775 "elements\variables.inc"][!WriteKeyValue CyclerBox MeterStyle "GlobalBox | Cycler1" "elements\footer.inc"][!Refresh]
 
 [Cycler]
 Meter=Image
@@ -253,21 +262,3 @@ Meter=Shape
 Shape=Rectangle 0,0,3,25 | Fill Color #Accent# | StrokeWidth 0
 X=5
 Y=(#BarHandler#+12)
-
-;[Cross]
-;Meter=Image
-;ImageName=#@#Icons\#IconPack#\Cross.png
-;X=20
-;Y=(#PanelH#-35)
-;W=20
-;LeftMouseUpAction=[!DeactivateConfig]
-;SolidColor=0,0,0,1
-
-;[SlideArea]
-;Meter=Image
-;W=#AniSlide#
-;H=#PanelH#
-;SolidColor=0,0,0,1
-;DynamicVariables=1
-;MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
-;MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]

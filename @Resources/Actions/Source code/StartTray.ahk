@@ -1,4 +1,4 @@
-﻿#SingleInstance Ignore
+﻿#SingleInstance Force
 #NoTrayIcon
 SetTitleMatchMode, 2
 DetectHiddenWindows, On

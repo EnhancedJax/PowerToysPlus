@@ -11,7 +11,7 @@ ScrollInterval=50
 Alpha=150
 ClicktoHide=[!Hide]
 
-OnOff=1
+OnOff=0
 @includeGlobal=#@#GlobalVars.inc
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
