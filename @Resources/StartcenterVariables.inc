@@ -10,7 +10,7 @@ SliderW=(280*#Scale#)
 SliderH=(3*#Scale#)
 
 Location=Center
-ShowSec=1
+ShowSec=0
 OnOff=1
 Animated=1
 

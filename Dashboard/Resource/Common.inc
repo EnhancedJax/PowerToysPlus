@@ -1,6 +1,12 @@
+[Rainmeter]
+OnFocusAction=#startk#
+OnUnfocusAction=#stopk#
+
 [Variables]
 AnimatedA=0
 ActualBlur=None
+;startk=[!CommandMeasure page1key start][!CommandMeasure page2key start][!CommandMeasure page3key start][!CommandMeasure page4key start][!CommandMeasure page5key start][!CommandMeasure page6key start]
+;stopk=[!CommandMeasure page1key Stop][!CommandMeasure page2key Stop][!CommandMeasure page3key Stop][!CommandMeasure page4key Stop][!CommandMeasure page5key Stop][!CommandMeasure page6key Stop]
 @include=#@#dashboardVariables.inc
 
 
@@ -23,9 +29,9 @@ Plugin=ActionTimer
 DynamicVariables=1
 UpdateDivider=-1
 ActionList1=Show | Repeat In,6,10 | BlurOn
-ActionList2=Showfade
+ActionList2=Showfade | startkeys
 ActionList3=BlurOff | Repeat Out,6,10 | Hide
-ActionList4=Hidefade
+ActionList4=Hidefade | stopkeys
 In=[!SetVariable Animation "(Clamp((#Animation#-10),0,100))"][!SetVariable AnimatedA "(Clamp((#AnimatedA#+26),0,255))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Out=[!SetVariable Animation "(Clamp((#Animation#+10),0,100))"][!SetVariable AnimatedA "(Clamp((#AnimatedA#-40),0,255))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Show=[!UpdateMeasure ActionTimer][!Show][!ZPos 1][!EnableMeasure Unload][!DisableMeasure OnLoad]["#@#Actions\RainFocus.exe" "#CURRENTCONFIG#"]
@@ -38,9 +44,43 @@ BlurOff=[!SetVariable ActualBlur None][!UpdateMeasure FrostedGlass][!UpdateMeasu
 [OnActualLoad]
 Measure=Calc
 Formula=Counter
-OnUpdateAction=[!SetVariable AnimatedA 255][!UpdateMeter Container][!SetVariable ActualBlur #Acrylic#][!UpdateMeasure FrostedGlass][!Delay 16][!EnableMeasureGroup NoUpdateOnLoad][!DisableMeasure #CURRENTSECTION#]
+OnUpdateAction=["#@#Actions\RainFocus.exe" "#CURRENTCONFIG#"][!SetVariable AnimatedA 255][!UpdateMeter Container][!SetVariable ActualBlur #Acrylic#][!UpdateMeasure FrostedGlass][!Delay 16][!EnableMeasureGroup NoUpdateOnLoad][!DisableMeasure #CURRENTSECTION#]
 UpdateDivider=-1
 
+;///////////////////////////////////////////////////////////////////////////////////////////////////
+;                                              numkeys
+;///////////////////////////////////////////////////////////////////////////////////////////////////
+
+;[page1key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=1
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "general.ini"]
+;[page2key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=2
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "resource.ini"]
+;[page3key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=3
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "display.ini"]
+;[page4key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=4
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "info.ini"]
+;[page5key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=5
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "hotkeys.ini"]
+;[page6key]
+;Measure=Plugin
+;PLugin=hotkey
+;hotkey=6
+;KeyDownAction=[!ActivateConfig "PowerToys+\Dashboard" "raininfo.ini"]
 
 ;///////////////////////////////////////////////////////////////////////////////////////////////////
 ;                                              Loading and unloading
@@ -162,7 +202,7 @@ SolidColor=0,0,0,1
 Container=Container
 [pageGeneral]
 meter=image
-x=(#GlobalW#/2-(10*#Scale#*1+30*#Scale#*4)/2)
+x=(#GlobalW#/2-(10*#Scale#*5+30*#Scale#*6)/2)
 Y=(#GlobalH#-50*#Scale#)
 ImageName=#@#icons\#IconPack#\menu.png
 meterstyle=pageImageStyle
@@ -182,10 +222,20 @@ meter=image
 ImageName=#@#icons\#IconPack#\important.png
 meterstyle=pageImageStyle
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "info.ini"]
+[pageHotkeys]
+meter=image
+ImageName=#@#icons\#IconPack#\hotkeys.png
+meterstyle=pageImageStyle
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "hotkeys.ini"]
+[pageRainInfo]
+meter=image
+ImageName=#@#icons\#IconPack#\rainmeter.png
+meterstyle=pageImageStyle
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "raininfo.ini"]
 
 [pageIndicator]
 meter=shape
-x=(#GlobalW#/2-(10*#Scale#*1+30*#Scale#*4)/2+#barhandler#*40*#Scale#)
+x=(#GlobalW#/2-(10*#Scale#*5+30*#Scale#*6)/2+#barhandler#*40*#Scale#)
 y=(5*#Scale#)R
 Container=Container
 Shape=Rectangle (2.5*#Scale#),0,(25*#Scale#),(4*#Scale#),(#Corner#*2),(#Corner#*2) | StrokeWidth 0 | Fill Color #Accent#

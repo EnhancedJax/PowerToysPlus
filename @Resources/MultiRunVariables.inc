@@ -11,9 +11,9 @@ browserlink=["#engine#[Filter2]"]
 browser=Default
 dictlink=https://dictionary.cambridge.org/dictionary/english-chinese-traditional/
 Icon=1
-Animated=1
-Animation=-100
-AnimatedA=0
+Animated=0
+Animation=0
+AnimatedA=255
 
 OnOff=1
 @includeGlobal=#@#GlobalVars.inc
