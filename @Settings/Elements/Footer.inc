@@ -2,7 +2,7 @@
 Meter=Shape
 DynamicVariables=1
 Group=Slides
-Shape=Rectangle 0,0,(#AniSlide#),(#PanelH#),(#Corner#*#Edge#*10),(#Corner#*#Edge#*10) | StrokeWidth 0 | Fill Color #SettingAltColor#
+Shape=Rectangle 0,0,(#AniSlide#),(#PanelH#),(#edge#*10),(#edge#*10) | StrokeWidth 0 | Fill Color #SettingAltColor#
 MouseOverAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
 MouseLeaveAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
 

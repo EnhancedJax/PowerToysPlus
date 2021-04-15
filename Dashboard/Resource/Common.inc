@@ -1,10 +1,9 @@
 [Rainmeter]
-OnFocusAction=#startk#
-OnUnfocusAction=#stopk#
+;OnFocusAction=[!CommandMeasure MeasureAhkWindowMessaging "SendMessage 16687 1 0"][!log focus]
+;OnUnfocusAction=[!CommandMeasure MeasureAhkWindowMessaging "SendMessage 16687 2 0"][!log unfocus]
 
 [Variables]
-AnimatedA=0
-ActualBlur=None
+actualblur=#Acrylic#
 ;startk=[!CommandMeasure page1key start][!CommandMeasure page2key start][!CommandMeasure page3key start][!CommandMeasure page4key start][!CommandMeasure page5key start][!CommandMeasure page6key start]
 ;stopk=[!CommandMeasure page1key Stop][!CommandMeasure page2key Stop][!CommandMeasure page3key Stop][!CommandMeasure page4key Stop][!CommandMeasure page5key Stop][!CommandMeasure page6key Stop]
 @include=#@#dashboardVariables.inc
@@ -44,7 +43,7 @@ BlurOff=[!SetVariable ActualBlur None][!UpdateMeasure FrostedGlass][!UpdateMeasu
 [OnActualLoad]
 Measure=Calc
 Formula=Counter
-OnUpdateAction=["#@#Actions\RainFocus.exe" "#CURRENTCONFIG#"][!SetVariable AnimatedA 255][!UpdateMeter Container][!SetVariable ActualBlur #Acrylic#][!UpdateMeasure FrostedGlass][!Delay 16][!EnableMeasureGroup NoUpdateOnLoad][!DisableMeasure #CURRENTSECTION#]
+OnUpdateAction=["#@#Actions\RainFocus.exe" "#CURRENTCONFIG#"][!Delay 16][!EnableMeasureGroup NoUpdateOnLoad][!DisableMeasure #CURRENTSECTION#]
 UpdateDivider=-1
 
 ;///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,7 +120,7 @@ UpdateDivider=-1
 Measure=String
 String=#ShowSec#
 IfMatch=1
-IfMatchAction=[!SetOption Date Text "%1%2"]
+IfMatchAction=[!SetOption Date Text "%1:%2"]
 UpdateDivider=-1
 
 [SettingImport3]
@@ -147,7 +146,10 @@ SolidColor=0,0,0,#AnimatedA#
 [Background]
 Meter=Shape
 Container=Container
-Shape=Rectangle 0,0,#GlobalW#,#GlobalH#,(#Corner#*#Edge#*15),(#Corner#*#Edge#*15) | StrokeWidth 1 | Stroke Color #Border#,#Alpha# | Fill Color #Color#,#Alpha#
+Shape=Rectangle 0,0,#GlobalW#,#GlobalH#,(#edge#*25),(#edge#*25) | StrokeWidth 1 | Stroke Color #Border#,#Alpha# | Fill Color #Color#,#Alpha#
+shape2=Rectangle 0,(#GlobalH#-#Edge#*25),(#Edge#*25),(#GlobalH#) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
+shape3=Rectangle 0,(#GlobalH#),(#GlobalH#),(#Edge#*-25),(#Edge#*-25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
+shape4=Rectangle (#Globalw#-#Edge#*25),0,(#GlobalW#),(#edge#*25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
 UpdateDivider=-1
 
 [WinIcon]
@@ -199,6 +201,7 @@ h=(30*#Scale#)
 x=(10*#Scale#)R
 y=r
 SolidColor=0,0,0,1
+ImageTint=#FontColor#
 Container=Container
 [pageGeneral]
 meter=image
@@ -214,12 +217,12 @@ meterstyle=pageImageStyle
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "resource.ini"]
 [pageDisplay]
 meter=image
-ImageName=#@#icons\#IconPack#\monitor.png
+ImageName=#@#icons\#IconPack#\Sound.png
 meterstyle=pageImageStyle
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "display.ini"]
+LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "Audio.ini"]
 [pageInfo]
 meter=image
-ImageName=#@#icons\#IconPack#\important.png
+ImageName=#@#icons\#IconPack#\Dashboard.png
 meterstyle=pageImageStyle
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\Dashboard" "info.ini"]
 [pageHotkeys]
@@ -246,7 +249,7 @@ Shape=Rectangle (2.5*#Scale#),0,(25*#Scale#),(4*#Scale#),(#Corner#*2),(#Corner#*
 
 [MeasureTime]
 Measure=Time
-Format=%H%M
+Format=%H:%M
 [MeasureSec]
 Measure=Time
 Format=%S
@@ -255,3 +258,8 @@ MaxValue=60
 [MeasureDate]
 Measure=Time
 Format=%a, %#b %#d
+
+[MeasureAhkWindowMessaging]
+Measure=Plugin
+Plugin=WindowMessagePlugin
+WindowClass=Dashboard.ahk

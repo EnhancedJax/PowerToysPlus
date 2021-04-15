@@ -1,8 +1,9 @@
-#SingleInstance Ignore
+#SingleInstance Force
 #NoTrayIcon
 SetTitleMatchMode, 2
 DetectHiddenWindows, On
-Unload := 0
+Unload := 1
+numberkeys := 0
 
 CloseScript(Name)
 	{
@@ -28,6 +29,19 @@ if WinExist("StartCenter.ahk" . " ahk_class AutoHotkey")
 	Run, AHKOld.exe "Source code\StartCenter.ahk"
 }
 
+OnMessage(16687, "RainmeterWindowMessage")
+
+RainmeterWindowMessage(wParam, lParam) { 
+  If (wParam = 1) {
+    numberkeys := 1
+    msgbox, 1
+  }
+  else {
+  	numberkeys := 0
+  	msgbox, 0
+  }
+}
+
 IniRead, OutputVar, Hotkeys.ini, Variables, Dashboard
 
 Hotkey,#%OutputVar%,Button
@@ -42,5 +56,11 @@ Return
 	if (Unload = 1)
 		Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasure "Unload" "PowerToys+\Dashboard"""
 		Unload := 0
+	return
+return
+
+~1::
+	if (numberkeys = 1)
+		msgbox, Pressed
 	return
 return

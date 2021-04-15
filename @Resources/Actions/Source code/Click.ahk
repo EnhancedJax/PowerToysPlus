@@ -1,9 +1,3 @@
-﻿#NoTrayIcon
-XPosition := A_ScreenWidth / 2
-
-CoordMode, Mouse, Screen
-MouseGetPos, xPos, yPos
-MouseMove, %XPosition%, 60
-Click
-MouseMove, %xPos%, %yPos%
+﻿WinGetClass, class, A
+MsgBox, The active window's class is "%A_ScriptName%".
 ExitApp

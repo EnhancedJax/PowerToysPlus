@@ -11,28 +11,28 @@ browserlink=["#engine#[Filter2]"]
 browser=Default
 dictlink=https://dictionary.cambridge.org/dictionary/english-chinese-traditional/
 Icon=1
-Animated=0
-Animation=0
-AnimatedA=255
+Animated=1
+Animation=-100
+AnimatedA=0
 
 OnOff=1
 @includeGlobal=#@#GlobalVars.inc
 
-H1=-,
-H2=-m,
-H3=shell:AppsFolder
-H4=-,
-H5=-L
-H6=-L
-H7=shutdown -s
-H8=-confiog
-H9=-config
-H10=explorer.exe
-H11=ss
-H12=powershell
-H13=This
-H14=rl
-H15=config
+H1=cmd
+H2=C:\Users\Jax4Real\AppData\Local\Microsoft\Edge\User Data
+H3=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data
+H4=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data\Default
+H5=cmd
+H6=-,
+H7=-m,
+H8=shell:AppsFolder
+H9=-,
+H10=-L
+H11=-L
+H12=shutdown -s
+H13=-confiog
+H14=-config
+H15=explorer.exe
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
 ;;╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝

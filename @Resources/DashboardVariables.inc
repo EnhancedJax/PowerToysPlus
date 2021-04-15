@@ -7,6 +7,7 @@ Location=bottom
 ShowSec=0
 OnOff=1
 Animated=1
+AnimatedA=255
 FocusDismiss=0
 
 focusdismissaction=
