@@ -112,8 +112,11 @@ UpdateDivider=-1
 Measure=String
 String=#Location#
 IFmatch=bottom
-IfMatchAction=[!Move (#SCREENAREAWIDTH#-#globalw#) (#WORKAREAHEIGHT#-#GlobalH#)]
-IfNotMatchAction=[!Move (#SCREENAREAWIDTH#-#globalw#) (#WORKAREAHEIGHT#/2-#GlobalH#/2)]
+IfMatchAction=[!Move (#SCREENAREAWIDTH#-#globalw#) (#WORKAREAHEIGHT#-#GlobalH#)][!SetOption Background MeterStyle BackgroundLeft]
+ifmatch2=right
+IfMatchAction2=[!Move (#SCREENAREAWIDTH#-#globalw#) (#WORKAREAHEIGHT#/2-#GlobalH#/2)][!SetOption Background MeterStyle BackgroundLeft]
+ifmatch3=secondLeft
+ifmatchaction3=[!Move (#SCREENAREAWIDTH#) (#WORKAREAHEIGHT#-#GlobalH#)][!SetOption Background MeterStyle backgroundRight]
 UpdateDivider=-1
 
 [SettingImport2]
@@ -147,10 +150,12 @@ SolidColor=0,0,0,#AnimatedA#
 Meter=Shape
 Container=Container
 Shape=Rectangle 0,0,#GlobalW#,#GlobalH#,(#edge#*25),(#edge#*25) | StrokeWidth 1 | Stroke Color #Border#,#Alpha# | Fill Color #Color#,#Alpha#
-shape2=Rectangle 0,(#GlobalH#-#Edge#*25),(#Edge#*25),(#GlobalH#) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
-shape3=Rectangle 0,(#GlobalH#),(#GlobalH#),(#Edge#*-25),(#Edge#*-25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
-shape4=Rectangle (#Globalw#-#Edge#*25),0,(#GlobalW#),(#edge#*25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
+shape2=Rectangle 0,(#GlobalH#),(#globalW#),(-25) | StrokeWidth 0 | Fill Color #Color#,(#edge#*255)
 UpdateDivider=-1
+[BackgroundLeft]
+shape3=Rectangle (#Globalw#-25),0,(25),(25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
+[backgroundRight]
+shape3=Rectangle (0),0,(25),(25) | StrokeWidth 0 | Fill Color #Color#,(#Corner#*255)
 
 [WinIcon]
 Meter=Image

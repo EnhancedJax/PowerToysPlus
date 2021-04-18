@@ -11,10 +11,10 @@ SliderH=(3*#Scale#)
 
 Location=Center
 ShowSec=0
-OnOff=1
+OnOff=0
 Animated=1
 
-Monitor=3
+Monitor=1
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║

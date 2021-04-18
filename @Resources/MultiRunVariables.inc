@@ -15,24 +15,24 @@ Animated=1
 Animation=-100
 AnimatedA=0
 
-OnOff=1
+OnOff=0
 @includeGlobal=#@#GlobalVars.inc
 
-H1=cmd
-H2=C:\Users\Jax4Real\AppData\Local\Microsoft\Edge\User Data
-H3=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data
-H4=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data\Default
-H5=cmd
-H6=-,
-H7=-m,
-H8=shell:AppsFolder
+H1=registry
+H2=shell:startup
+H3=cmd
+H4=cmd
+H5=C:\Users\Jax4Real\AppData\Local\Microsoft\Edge\User Data
+H6=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data
+H7=C:\UsersJax4Real\AppData\Local\Microsoft\Edge\User Data\Default
+H8=cmd
 H9=-,
-H10=-L
-H11=-L
-H12=shutdown -s
-H13=-confiog
-H14=-config
-H15=explorer.exe
+H10=-m,
+H11=shell:AppsFolder
+H12=-,
+H13=-L
+H14=-L
+H15=shutdown -s
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║
 ;;╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝

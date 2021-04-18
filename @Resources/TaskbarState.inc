@@ -1,5 +1,5 @@
 [Variables]
-TaskbarBool=1
+TaskbarBool=0
 ApptrayBool=1
 Screen=0
 IconPath=#@#Images\Jaxlaunch.png

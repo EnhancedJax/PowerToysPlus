@@ -3,9 +3,9 @@
 GlobalW=(500*#Scale#)
 GlobalH=(800*#Scale#)
 
-Location=bottom
+Location=secondLeft
 ShowSec=0
-OnOff=1
+OnOff=0
 Animated=1
 AnimatedA=255
 FocusDismiss=0
