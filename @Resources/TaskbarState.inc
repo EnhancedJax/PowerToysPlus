@@ -1,5 +1,5 @@
 [Variables]
-TaskbarBool=0
+TaskbarBool=1
 ApptrayBool=1
 Screen=0
 IconPath=#@#Images\Jaxlaunch.png
@@ -9,7 +9,7 @@ WebsiteActions=
 StudyActions=
 CodeActions=
 MR=1
-PC=1
-DB=1
+PC=0
+DB=0
 SCl=1
 SCr=1

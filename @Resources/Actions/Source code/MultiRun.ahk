@@ -1,4 +1,4 @@
-#SingleInstance Ignore
+#SingleInstance Force
 #NoTrayIcon
 SetTitleMatchMode, 2
 DetectHiddenWindows, On
@@ -38,12 +38,13 @@ Return
 
 Button:
 Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasureGroup "UpdateOnLoad" "PowerToys+\MultiRun"""
-;Unload := 1
+; Unload := 1
 Return
 
-;~Esc::
-;	if (Unload = 1)
-;		Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasure "Unload" "PowerToys+\MultiRun"""
-;		Unload := 0
-;	return
-;return
+; ~Esc::
+; 	if (Unload = 1) {
+; 		Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasure "Unload" "PowerToys+\MultiRun""""
+; 		Unload := 0
+; 		return
+; 	}
+; return

@@ -33,24 +33,44 @@ OnUpdateAction=[!SetOption #CURRENTSETTING# FOntWeight 630][!Zpos 1][!FadeDurati
 ;FontSize=9
 ;StringAlign=LEft
 
-[Cross]
+[Menu]
 Meter=Image
-ImageName=#@#Icons\#IconPack#\Cross.png
+ImageName=#@#Icons\#IconPack#\Menu.png
 X=20
 Y=20
 W=20
-LeftMouseUpAction=[!DeactivateConfig]
+; LeftMouseUpAction=[!DeactivateConfig]
 SolidColor=0,0,0,1
 ImageTint=#FontColor#
 Container=SlideContainer
 
-[crosstext]
+[Menutext]
 Meter=String
 Text=Powertoys+ Config
 X=25R
 y=10r
 FontWeight=600
 MeterStyle=RegularText | TextStyle
+
+[Cross]
+Meter=Image
+ImageName=#@#Icons\#IconPack#\Cross.png
+X=(#PanelW#-40)
+Y=20
+W=20
+LeftMouseUpAction=[!DeactivateConfig]
+SolidColor=0,0,0,1
+ImageTint=#FontColor#
+
+; [CategoryText1]
+; Meter=String
+; X=10
+; Y=110
+; FontSize=9
+; FontColor=#DarkColor#
+; Text=General
+; MeterStyle=RegularText
+; Container=SlideContainer
 
 [GlobalBox]
 Meter=Shape
@@ -63,6 +83,8 @@ Group=Slides
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Accent#,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "Global.ini"]
+RIghtMOuseUpAction=[!ActivateConfig "PowerToys+\@settings" "GlobalDanger.ini"]
+
 
 [Global]
 Meter=Image
@@ -86,9 +108,17 @@ X=([Global:X]+50)
 Y=([Global:Y]+10)
 MeterStyle=RegularText | TextStyle
 
+[Div1]
+Meter=Shape
+X=0
+Y=25R
+Shape=Line 10,0,(#AniSlide#-10),0 | StrokeWidth 1 | Stroke color #DarkColor#
+DynamicVariables=1
+Group=Slides
+
 [RunBox]
 Meter=Shape
-Y=15R
+Y=10R
 MeterStyle=GlobalBox
 This=Fill Color #Accent#,0
 LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "MultiRun.ini"]
@@ -102,6 +132,7 @@ MeterStyle=Global
 Meter=String
 Text=MultiRun
 FontWeight=
+Y=70r
 MeterStyle=RegularText | TextStyle
 
 [ClipboardBox]
@@ -158,24 +189,6 @@ Text=SnipControl
 FontWeight=
 MeterStyle=RegularText | TextStyle
 
-[ImageOverlayBox]
-Meter=Shape
-Y=15R
-MeterStyle=GlobalBox
-This=Fill Color #Accent#,0
-LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "ImageOverlay.ini"]
-
-[ImageOverlay]
-Meter=Image
-ImageName=#@#Icons\#IconPack#\ImageOverlay.png
-MeterStyle=Global
-
-[ImageOverlayText]
-Meter=String
-Text=ImageOverlay
-FontWeight=
-MeterStyle=RegularText | TextStyle
-
 [StartBox]
 Meter=Shape
 Y=15R
@@ -194,25 +207,25 @@ Text=StartCenter
 FontWeight=
 MeterStyle=RegularText | TextStyle
 
-[DesktopSwitchBox]
-Meter=Shape
-Y=15R
-MeterStyle=GlobalBox
-This=Fill Color #Accent#,0
-;LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "DesktopSwitch.ini"]
+; [DesktopSwitchBox]
+; Meter=Shape
+; Y=15R
+; MeterStyle=GlobalBox
+; This=Fill Color #Accent#,0
+; ;LeftMouseUpAction=[!ActivateConfig "PowerToys+\@settings" "DesktopSwitch.ini"]
 
-[DesktopSwitch]
-Meter=Image
-ImageName=#@#Icons\#IconPack#\DesktopSwitch.png
-MeterStyle=Global
-ImageAlpha=100
+; [DesktopSwitch]
+; Meter=Image
+; ImageName=#@#Icons\#IconPack#\DesktopSwitch.png
+; MeterStyle=Global
+; ImageAlpha=100
 
-[DesktopSwitchText]
-Meter=String
-Text=Deswitch
-FOntColor=255,255,255,100
-FontWeight=
-MeterStyle=RegularText | TextStyle
+; [DesktopSwitchText]
+; Meter=String
+; Text=Deswitch
+; FOntColor=255,255,255,100
+; FontWeight=
+; MeterStyle=RegularText | TextStyle
 
 ;[()Box]
 ;Meter=Shape
@@ -261,4 +274,4 @@ MeterStyle=RegularText | TextStyle
 Meter=Shape
 Shape=Rectangle 0,0,3,25 | Fill Color #Accent# | StrokeWidth 0
 X=5
-Y=(#BarHandler#+12)
+Y=(132+#BarHandler#*50+20*(Clamp(#BarHandler#,0,1)))

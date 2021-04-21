@@ -1,0 +1,9 @@
+[Variables]
+Color=36,36,36
+Border=54,54,54
+FontColor=255,255,255
+DarkColor=190,190,190
+BoxBorder=80,80,80
+BoxColor=60,60,60
+SettingColor=36,36,36
+SettingAltColor=54,54,54

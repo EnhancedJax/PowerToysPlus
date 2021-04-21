@@ -1,12 +1,12 @@
 [Variables]
-CScheme=Dark
+CScheme=24Three
 @includeCScheme=#@#Cschemes\#CScheme#.inc
-Accent=35, 159, 255
+Accent=232, 17, 35
 Font=Seoge UI
 Scale=(#SCREENAREAHEIGHT#/1080)
-Corner=1
-Edge=0
-Acrylic=Acrylic
-blur=Blur
-Alpha=150
+Corner=0.00
+Edge=0.00
+Acrylic=none
+blur=none
+Alpha=255
 IconPack=Fluent

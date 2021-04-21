@@ -11,7 +11,7 @@ SliderH=(3*#Scale#)
 
 Location=Center
 ShowSec=0
-OnOff=0
+OnOff=1
 Animated=1
 
 Monitor=1
