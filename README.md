@@ -1,10 +1,8 @@
 <h1 align="center">
-  PowerToys+ (Unreleased)
+  PowerToys+ (Discontinued)
 </h1>
 
 <img src="https://github.com/EnhancedJax/PowerToysPlus/blob/master/%40Resources/Images/LogoSplash/Amoled.png"/>
-
-<h4 align="center">Download Now!</h4>
 
 A *Rainmeter* skin which adds serveral features and modules to windows. Download rainmeter [here](https://www.rainmeter.net/)
 
